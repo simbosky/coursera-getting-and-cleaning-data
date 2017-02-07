@@ -1,0 +1,66 @@
+# Code Book
+## Transformations applied to the UCI HAR dataset
+
+### Summary
+The data was cleaned by:
+1) Adding valid variable names
+2) Merging the subject id and activity label
+3) concatenating the train and test data
+4) selecting only variables with "std" or "mean" in the title
+5) renaming variables to be more meaningful
+6) producing a table of averages by grouping and summarizing all numeric variables by subject and activity
+
+This produces a table of 180 observations of 50 variables.
+
+### Variables
+The variable names created for the averages table are:
+subject_id
+activity_label
+Time_Body_Accelerometer_mean_X_Mean
+Time_Body_Accelerometer_mean_Y_Mean
+Time_Body_Accelerometer_mean_Z_Mean
+Time_Body_Accelerometer_std_X_Mean
+Time_Body_Accelerometer_std_Y_Mean
+Time_Body_Accelerometer_std_Z_Mean
+Time_Gravity_Accelerometer_mean_X_Mean
+Time_Gravity_Accelerometer_mean_Y_Mean
+Time_Gravity_Accelerometer_mean_Z_Mean
+Time_Gravity_Accelerometer_std_X_Mean
+Time_Gravity_Accelerometer_std_Y_Mean
+Time_Gravity_Accelerometer_std_Z_Mean
+Time_Body_AccelerometerJerk_mean_X_Mean
+Time_Body_AccelerometerJerk_mean_Y_Mean
+Time_Body_AccelerometerJerk_mean_Z_Mean
+Time_Body_AccelerometerJerk_std_X_Mean
+Time_Body_AccelerometerJerk_std_Y_Mean
+Time_Body_AccelerometerJerk_std_Z_Mean
+Time_Body_Gyroscope_mean_X_Mean
+Time_Body_Gyroscope_mean_Y_Mean
+Time_Body_Gyroscope_mean_Z_Mean
+Time_Body_Gyroscope_std_X_Mean
+Time_Body_Gyroscope_std_Y_Mean
+Time_Body_Gyroscope_std_Z_Mean
+Time_Body_GyroscopeJerk_mean_X_Mean
+Time_Body_GyroscopeJerk_mean_Y_Mean
+Time_Body_GyroscopeJerk_mean_Z_Mean
+Time_Body_GyroscopeJerk_std_X_Mean
+Time_Body_GyroscopeJerk_std_Y_Mean
+Time_Body_GyroscopeJerk_std_Z_Mean
+FFT_Body_Accelerometer_mean_X_Mean
+FFT_Body_Accelerometer_mean_Y_Mean
+FFT_Body_Accelerometer_mean_Z_Mean
+FFT_Body_Accelerometer_std_X_Mean
+FFT_Body_Accelerometer_std_Y_Mean
+FFT_Body_Accelerometer_std_Z_Mean
+FFT_Body_AccelerometerJerk_mean_X_Mean
+FFT_Body_AccelerometerJerk_mean_Y_Mean
+FFT_Body_AccelerometerJerk_mean_Z_Mean
+FFT_Body_AccelerometerJerk_std_X_Mean
+FFT_Body_AccelerometerJerk_std_Y_Mean
+FFT_Body_AccelerometerJerk_std_Z_Mean
+FFT_Body_Gyroscope_mean_X_Mean
+FFT_Body_Gyroscope_mean_Y_Mean
+FFT_Body_Gyroscope_mean_Z_Mean
+FFT_Body_Gyroscope_std_X_Mean
+FFT_Body_Gyroscope_std_Y_Mean
+FFT_Body_Gyroscope_std_Z_Mean
