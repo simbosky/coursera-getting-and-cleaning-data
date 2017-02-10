@@ -15,66 +15,25 @@ For each record in the dataset it is provided:
 
 ## Transformations applied to the UCI HAR dataset
 
-** Data Transformations **
-The data was cleaned by:
-1) Adding valid variable names
-2) Merging the subject id and activity label
-3) concatenating the train and test data
-4) selecting only variables with "std" or "mean" in the title
-5) renaming variables to be more meaningful
-6) producing a table of averages by grouping and summarizing all numeric variables by subject and activity
+**Data Transformations**  
+The data was cleaned by:  
+1. Adding column names from the features table which were cleaned to enable extraction of variables from column names at a later stage  
+2. Merging the subject id and activity label  
+3. selecting only variables with "std" or "mean" in the title  
+4. Melting the dataframe and separating to create the new variables (see below)
+3. Concatenating the train and test data  
+6. producing a table of averages by grouping and summarizing all numeric variables by subject and activity  
+7. spreading the table to separate out the mean and standard deviation rows to columns
 
-This produces a table of 180 observations of 50 variables.
+This produces a table of 5950 observations of 8 variables.
 
 ** Variables **
-The variable names created for the averages table are:
-subject_id
-activity_label
-Time_Body_Accelerometer_mean_X_Mean
-Time_Body_Accelerometer_mean_Y_Mean
-Time_Body_Accelerometer_mean_Z_Mean
-Time_Body_Accelerometer_std_X_Mean
-Time_Body_Accelerometer_std_Y_Mean
-Time_Body_Accelerometer_std_Z_Mean
-Time_Gravity_Accelerometer_mean_X_Mean
-Time_Gravity_Accelerometer_mean_Y_Mean
-Time_Gravity_Accelerometer_mean_Z_Mean
-Time_Gravity_Accelerometer_std_X_Mean
-Time_Gravity_Accelerometer_std_Y_Mean
-Time_Gravity_Accelerometer_std_Z_Mean
-Time_Body_AccelerometerJerk_mean_X_Mean
-Time_Body_AccelerometerJerk_mean_Y_Mean
-Time_Body_AccelerometerJerk_mean_Z_Mean
-Time_Body_AccelerometerJerk_std_X_Mean
-Time_Body_AccelerometerJerk_std_Y_Mean
-Time_Body_AccelerometerJerk_std_Z_Mean
-Time_Body_Gyroscope_mean_X_Mean
-Time_Body_Gyroscope_mean_Y_Mean
-Time_Body_Gyroscope_mean_Z_Mean
-Time_Body_Gyroscope_std_X_Mean
-Time_Body_Gyroscope_std_Y_Mean
-Time_Body_Gyroscope_std_Z_Mean
-Time_Body_GyroscopeJerk_mean_X_Mean
-Time_Body_GyroscopeJerk_mean_Y_Mean
-Time_Body_GyroscopeJerk_mean_Z_Mean
-Time_Body_GyroscopeJerk_std_X_Mean
-Time_Body_GyroscopeJerk_std_Y_Mean
-Time_Body_GyroscopeJerk_std_Z_Mean
-FFT_Body_Accelerometer_mean_X_Mean
-FFT_Body_Accelerometer_mean_Y_Mean
-FFT_Body_Accelerometer_mean_Z_Mean
-FFT_Body_Accelerometer_std_X_Mean
-FFT_Body_Accelerometer_std_Y_Mean
-FFT_Body_Accelerometer_std_Z_Mean
-FFT_Body_AccelerometerJerk_mean_X_Mean
-FFT_Body_AccelerometerJerk_mean_Y_Mean
-FFT_Body_AccelerometerJerk_mean_Z_Mean
-FFT_Body_AccelerometerJerk_std_X_Mean
-FFT_Body_AccelerometerJerk_std_Y_Mean
-FFT_Body_AccelerometerJerk_std_Z_Mean
-FFT_Body_Gyroscope_mean_X_Mean
-FFT_Body_Gyroscope_mean_Y_Mean
-FFT_Body_Gyroscope_mean_Z_Mean
-FFT_Body_Gyroscope_std_X_Mean
-FFT_Body_Gyroscope_std_Y_Mean
-FFT_Body_Gyroscope_std_Z_Mean
+The variable names created for the averages table, and the values they can take, are:
+- subject_id -> a range of 1:30 identifying the subject
+- activity_label -> a string labeling the activity as WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING
+- transform -> a string labeling the measure as Time or Fast Fourier Transform
+- area -> a string labelling the measue as Body or Gravity
+- measuretype -> a string labelling the measue as Acc, AccJerk, Gyro or GyroJerk
+- direction -> a string labelling the measure as X, Y, Z or MAG
+- mean -> a value being the mean of the means
+- std -> a value being the mean of the standard deviations
